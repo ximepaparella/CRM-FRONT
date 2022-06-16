@@ -2,8 +2,8 @@ import Layout from "../components/Layout";
 import { useMutation, gql } from "@apollo/client";
 import { useState } from "react";
 import { useFormik } from "formik";
+import { useRouter } from "next/router";
 import * as Yup from "yup";
-
 import Alert from "../components/Alert/alert";
 
 const NEW_ACCOUNT = gql`
@@ -24,6 +24,10 @@ const Register = () => {
   //create new users
   const [newUser] = useMutation(NEW_ACCOUNT);
 
+  //Routing
+  const router = useRouter();
+
+  // Form Validation
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -46,6 +50,7 @@ const Register = () => {
     onSubmit: async (values) => {
       console.log("valores", values);
 
+      // Destructuring of values to pass to the mutation
       const { name, lastName, email, password, institutionName } = values;
       try {
         const { data } = await newUser({
@@ -65,7 +70,15 @@ const Register = () => {
 
         //User created succesfully
         setMessage(`Se creo correctamente el usuario: ${data.newUser.name}`);
+
+        setTimeout(() => {
+          setMessage(null);
+
+          //redirect to login page
+          router.push("/login");
+        }, 3000);
       } catch (error) {
+        //User already existent, error message
         setMessage(error.message.replace("GraphQL error:", ""));
         setTimeout(() => {
           setMessage(null);
@@ -81,7 +94,9 @@ const Register = () => {
   return (
     <>
       <Layout>
+        {/* If the message exist invoque the function showMessage*/}
         {message && showMessage()}
+
         <div className="flex items-center justify-center w-full min-h-full px-4 py-12 sm:px-6 lg:px-8">
           <div className="w-full p-12 space-y-8 bg-white rounded lg:w-1/4">
             <div>
