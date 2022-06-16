@@ -66,8 +66,6 @@ const Register = () => {
           },
         });
 
-        console.log("data", data);
-
         //User created succesfully
         setMessage(`Se creo correctamente el usuario: ${data.newUser.name}`);
 
