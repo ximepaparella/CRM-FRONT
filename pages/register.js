@@ -48,8 +48,6 @@ const Register = () => {
         .min(6, "Debe contenter al menos 6 caracteres"),
     }),
     onSubmit: async (values) => {
-      console.log("valores", values);
-
       // Destructuring of values to pass to the mutation
       const { name, lastName, email, password, institutionName } = values;
       try {

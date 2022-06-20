@@ -1,8 +1,8 @@
+import { useRouter } from "next/router";
+import { gql, useQuery } from "@apollo/client";
+import Link from "next/link";
 import Layout from "../components/Layout/Layout";
 import ClientRow from "../components/ClientRow/ClientRow";
-import { gql, useQuery } from "@apollo/client";
-import { useRouter } from "next/router";
-import Link from "next/link";
 
 const GET_CLIENTS_BY_USER = gql`
   query getClientByVendor {

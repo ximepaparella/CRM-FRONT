@@ -46,7 +46,6 @@ const Login = () => {
             },
           },
         });
-        console.log(data);
         setMessage("Autenticando...");
 
         //Save token to localStorage

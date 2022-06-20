@@ -81,7 +81,6 @@ const NewClient = () => {
         .required("Por favor seleccione el país"),
     }),
     onSubmit: async (values) => {
-      console.log("valores", values);
       const {
         name,
         lastName,

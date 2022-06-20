@@ -31,17 +31,34 @@ const Header = () => {
 
   const { name, lastName } = data.getUser;
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    return router.push("/login");
-  };
+  4;
   return (
     <div className="flex items-center justify-between w-full p-4 mb-5 bg-white rounded shadow-md">
       <p className="mr-2">
         Hola {name} {lastName}
       </p>
 
-      <Button text="Cerrar sesión" onClick={() => logout()} className="w-full px-2 py-1 text-sm text-white bg-blue-800 rounded sm:w-auto hover:bg-blue-900" />
+      <Button
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-5 h-5 mr-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+            />
+          </svg>
+        }
+        text="Cerrar sesión"
+        onClick={() => logout()}
+        className="flex w-full px-2 py-1 text-sm text-white bg-blue-800 rounded sm:w-auto hover:bg-blue-900"
+      />
     </div>
   );
 };

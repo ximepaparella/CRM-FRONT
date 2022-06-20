@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 
 const Sidebar = () => {
   const router = useRouter();
-  console.log(router);
   return (
     <>
       <aside className="p-5 bg-gray-800 sm:w-1/3 xl:w-1/6 sm:min-h-screen">
