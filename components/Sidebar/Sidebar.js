@@ -7,9 +7,9 @@ const Sidebar = () => {
   console.log(router);
   return (
     <>
-      <aside className="bg-gray-800 sm:w-1/3 xl:w-1/6 sm:min-h-screen p-5">
+      <aside className="p-5 bg-gray-800 sm:w-1/3 xl:w-1/6 sm:min-h-screen">
         <div>
-          <p className="text-white text-2xl font-light"> Dashboard CRM</p>
+          <p className="text-2xl font-light text-white"> Dashboard CRM</p>
         </div>
         <nav className="mt-5 list-none">
           <li
@@ -18,7 +18,7 @@ const Sidebar = () => {
             }
           >
             <Link href="/">
-              <a className="text-white block">Clients</a>
+              <a className="block text-white">Clientes</a>
             </Link>
           </li>
           <li
@@ -29,7 +29,7 @@ const Sidebar = () => {
             }
           >
             <Link href="/orders">
-              <a className="text-white block">Orders</a>
+              <a className="block text-white">Ordenes</a>
             </Link>
           </li>
           <li
@@ -40,7 +40,7 @@ const Sidebar = () => {
             }
           >
             <Link href="/products">
-              <a className="text-white block">Products</a>
+              <a className="block text-white">Productos</a>
             </Link>
           </li>
         </nav>

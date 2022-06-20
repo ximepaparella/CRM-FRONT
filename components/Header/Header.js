@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import Button from "../Button/Button";
 
 const GET_USER = gql`
   query getUser {
@@ -39,13 +40,8 @@ const Header = () => {
       <p className="mr-2">
         Hola {name} {lastName}
       </p>
-      <button
-        onClick={() => logout()}
-        className="w-full px-2 py-1 text-sm text-white bg-blue-800 rounded sm:w-auto hover:bg-blue-900"
-        type="button"
-      >
-        Cerrar sesión
-      </button>
+
+      <Button text="Cerrar sesión" onClick={() => logout()} className="w-full px-2 py-1 text-sm text-white bg-blue-800 rounded sm:w-auto hover:bg-blue-900" />
     </div>
   );
 };

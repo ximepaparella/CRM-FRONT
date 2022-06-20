@@ -130,7 +130,9 @@ const NewClient = () => {
   return (
     <>
       <Layout>
-        <h1 className="text-2xl font-light text-grey-800">New Client</h1>
+        <h1 className="text-2xl font-light text-grey-800">
+          Crear nuevo cliente
+        </h1>
 
         {/* If the message exist invoque the function showMessage*/}
         {message && showMessage()}

@@ -1,4 +1,5 @@
 import Layout from "../components/Layout/Layout";
+import ClientRow from "../components/ClientRow/ClientRow";
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -10,6 +11,7 @@ const GET_CLIENTS_BY_USER = gql`
       name
       lastName
       email
+      institutionName
     }
   }
 `;
@@ -38,26 +40,17 @@ const Index = () => {
         </Link>
 
         <table className="w-full mt-10 shadow-md table-auto w-lg">
-          <thead className="bg-gray-800">
+          <thead className="bg-gray-700">
             <tr className="text-white ">
-              <td className="w-1/5 px-4 py-2">Name</td>
-              <td className="w-1/5 px-4 py-2">Institution Name</td>
+              <td className="w-1/5 px-4 py-2">Nombre Completo</td>
+              <td className="w-1/5 px-4 py-2">Entidad</td>
               <td className="w-1/5 px-4 py-2">Email</td>
+              <td className="w-1/5 px-4 py-2">Acciones</td>
             </tr>
           </thead>
           <tbody className="bg-white">
             {data.getClientByVendor.map((client) => (
-              <tr key={client.id}>
-                <td className="px-4 py-2 border">
-                  {client.name} {client.lastName}
-                </td>
-                <td className="px-4 py-2 border">
-                  {client.name} {client.institutionName}
-                </td>
-                <td className="px-4 py-2 border">
-                  {client.name} {client.email}
-                </td>
-              </tr>
+              <ClientRow key={client.id} client={client} />
             ))}
           </tbody>
         </table>
