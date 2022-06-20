@@ -1,10 +1,10 @@
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 
 const Products = () => {
   return (
     <>
       <Layout>
-        <h1 className="text-2xl text-grey-800 font-light">Products</h1>
+        <h1 className="text-2xl font-light text-grey-800">Products</h1>
       </Layout>
     </>
   );

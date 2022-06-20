@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 import { useMutation, gql } from "@apollo/client";
 import { useState } from "react";
 import { useFormik } from "formik";

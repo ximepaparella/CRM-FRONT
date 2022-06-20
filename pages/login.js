@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 import Link from "next/link";
 import { useState } from "react";
 import { useFormik } from "formik";
@@ -78,7 +78,7 @@ const Login = () => {
         {message && showMessage()}
 
         <div className="flex items-center justify-center w-full min-h-full px-4 py-12 sm:px-6 lg:px-8">
-          <div className="p-12 space-y-8 bg-white rounded sm:w-1/4">
+          <div className="p-12 space-y-8 bg-white rounded lg:w-1/3 md:w-1/2 sm:w-1/4">
             <div>
               <img
                 className="w-auto h-12 mx-auto"
@@ -101,7 +101,7 @@ const Login = () => {
                     name="email"
                     type="email"
                     required
-                    className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Ingresá tu e-mail"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -122,7 +122,7 @@ const Login = () => {
                     name="password"
                     type="password"
                     required
-                    className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Ingresá tu Contraseña"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
