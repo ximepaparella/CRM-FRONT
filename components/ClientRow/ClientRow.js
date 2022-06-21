@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import Swal from "sweetalert2";
 import { gql, useMutation } from "@apollo/client";
+import Router from "next/router";
 
 const DELETE_CLIENT = gql`
   mutation deleteClient($id: ID!) {
@@ -40,7 +41,10 @@ const ClientRow = ({ client }) => {
   const { name, lastName, institutionName, email, id } = client;
 
   const editClient = () => {
-    alert("Editando");
+    Router.push({
+      pathname: "/edit-client/[id]",
+      query: { id },
+    });
   };
 
   const deleteClientAlert = (id) => {

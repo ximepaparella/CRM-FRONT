@@ -29,9 +29,13 @@ const Header = () => {
     return <p>Loading...</p>;
   }
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    return router.push("/login");
+  };
+
   const { name, lastName } = data.getUser;
 
-  4;
   return (
     <div className="flex items-center justify-between w-full p-4 mb-5 bg-white rounded shadow-md">
       <p className="mr-2">
